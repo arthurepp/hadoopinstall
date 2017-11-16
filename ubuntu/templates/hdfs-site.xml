@@ -1,0 +1,25 @@
+<configuration>
+<property>
+ <name>dfs.secondary.http.address</name>
+        <value>hadoop-master:50090</value>
+        <description>Secondary NameNode hostname</description>
+</property>
+<property>
+        <name>dfs.data.dir</name>
+        <value>/usr/local/hadoop/hdfs/datanode</value>
+        <final>true</final>
+</property>
+<property>
+        <name>dfs.name.dir</name>
+        <value>/usr/local/hadoop/hdfs/namenode</value>
+        <final>true</final>
+</property>
+<property>
+        <name>dfs.blocksize</name>
+        <value>67108864</value>
+</property>
+<property>
+        <name>dfs.replication</name>
+        <value>1</value>
+</property>
+</configuration>
