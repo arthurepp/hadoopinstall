@@ -60,7 +60,6 @@ sudo tar -xzvf /install/sqoop-1.4.6.tar.gz -C /usr/local/hadoop/sqoop --strip-co
 sudo tar -xzvf /install/spark-2.2.0-bin-hadoop2.7.tgz -C /usr/local/hadoop/spark --strip-components=1
 sudo tar -xzvf /install/mysql-connector-java-5.1.44.tar.gz -C /install/
 
-sudo cp templates/hive-env.sh /usr/local/hadoop/hive/conf/hive-env.sh
 sudo cp templates/hive-site.xml /usr/local/hadoop/hive/conf/hive-site.xml
 sudo rm /usr/local/hadoop/hive/lib/log4j-slf4j-impl-2.6.2.jar
 sudo cp templates/core-site.xml /usr/local/hadoop/etc/hadoop/core-site.xml
