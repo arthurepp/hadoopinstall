@@ -29,9 +29,8 @@ echo 'export YARN_CONF_DIR="/usr/local/hadoop/etc/hadoop"' >> ~/.bashrc
 
 sudo mkdir /install
 sudo wget -O /install/hadoop-2.8.2.tar.gz  "http://ftp.unicamp.br/pub/apache/hadoop/common/hadoop-2.8.2/hadoop-2.8.2.tar.gz"
-sudo wget -O /install/apache-hive-2.3.1-bin.tar.gz  "http://ftp.unicamp.br/pub/apache/hive/hive-2.3.1/apache-hive-2.3.1-bin.tar.gz"
-sudo wget -O /install/sqoop-1.4.6.tar.gz  "http://mirror.nbtelecom.com.br/apache/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz"
-sudo wget -O /install/apache-impala-incubating-2.10.0.tar.gz  "http://www.apache.org/dyn/closer.cgi?action=download&filename=incubator/impala/2.10.0/apache-impala-incubating-2.10.0.tar.gz"
+sudo wget -O /install/apache-hive-2.3.2-bin.tar.gz  "http://ftp.unicamp.br/pub/apache/hive/hive-2.3.2/apache-hive-2.3.2-bin.tar.gz"
+sudo wget -O /install/sqoop-1.4.6.tar.gz  "http://ftp.unicamp.br/pub/apache/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz"
 sudo wget -O /install/spark-2.2.0-bin-hadoop2.7.tgz  "http://ftp.unicamp.br/pub/apache/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz"
 sudo wget -O /install/mysql-connector-java-5.1.44.tar.gz  "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.44.tar.gz"
 
@@ -48,7 +47,7 @@ sudo mkdir -p /usr/local/hadoop/spark
 sudo chown -R hadoop:hadoop /usr/local/hadoop
 
 sudo tar -xzvf /install/hadoop-2.8.2.tar.gz -C /usr/local/hadoop --strip-components=1
-sudo tar -xzvf /install/apache-hive-2.3.1-bin.tar.gz -C /usr/local/hadoop/hive --strip-components=1
+sudo tar -xzvf /install/apache-hive-2.3.2-bin.tar.gz -C /usr/local/hadoop/hive --strip-components=1
 sudo tar -xzvf /install/sqoop-1.4.6.tar.gz -C /usr/local/hadoop/sqoop --strip-components=1
 sudo tar -xzvf /install/spark-2.2.0-bin-hadoop2.7.tgz -C /usr/local/hadoop/spark --strip-components=1
 sudo tar -xzvf /install/mysql-connector-java-5.1.44.tar.gz -C /install/
