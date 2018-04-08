@@ -28,11 +28,11 @@ echo 'export PATH=$PATH:$SPARK_HOME/bin' >> ~/.bashrc
 echo 'export YARN_CONF_DIR="/usr/local/hadoop/etc/hadoop"' >> ~/.bashrc
 
 sudo mkdir /install
-sudo wget -O /install/hadoop-2.8.2.tar.gz  "http://ftp.unicamp.br/pub/apache/hadoop/common/hadoop-2.8.2/hadoop-2.8.2.tar.gz"
-sudo wget -O /install/apache-hive-2.3.2-bin.tar.gz  "http://ftp.unicamp.br/pub/apache/hive/hive-2.3.2/apache-hive-2.3.2-bin.tar.gz"
-sudo wget -O /install/sqoop-1.4.6.tar.gz  "http://ftp.unicamp.br/pub/apache/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz"
-sudo wget -O /install/spark-2.2.0-bin-hadoop2.7.tgz  "http://ftp.unicamp.br/pub/apache/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz"
-sudo wget -O /install/mysql-connector-java-5.1.44.tar.gz  "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.44.tar.gz"
+sudo wget -O /install/hadoop-2.8.3.tar.gz  "http://ftp.unicamp.br/pub/apache/hadoop/common/hadoop-2.8.3/hadoop-2.8.3.tar.gz"
+sudo wget -O /install/apache-hive-2.3.3-bin.tar.gz  "http://ftp.unicamp.br/pub/apache/hive/hive-2.3.3/apache-hive-2.3.3-bin.tar.gz"
+sudo wget -O /install/sqoop-1.4.7.tar.gz  "http://ftp.unicamp.br/pub/apache/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz"
+sudo wget -O /install/spark-2.3.0-bin-hadoop2.7.tgz  "http://ftp.unicamp.br/pub/apache/spark/spark-2.3.0/spark-2.3.0-bin-hadoop2.7.tgz"
+sudo wget -O /install/mysql-connector-java-5.1.46.tar.gz  "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.46.tar.gz"
 
 sudo mkdir -p /usr/local/hadoop
 sudo mkdir -p /usr/local/hadoop/logs
@@ -64,8 +64,8 @@ sudo cp templates/slaves /usr/local/hadoop/etc/hadoop/slaves
 sudo cp templates/slaves /usr/local/hadoop/spark/conf/slaves
 sudo cp /usr/local/hadoop/hive/conf/hive-site.xml /usr/local/hadoop/spark/conf/
 
-sudo cp /install/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar /usr/local/hadoop/hive/lib/
-sudo cp /install/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar /usr/local/hadoop/sqoop/lib/
+sudo cp /install/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46-bin.jar /usr/local/hadoop/hive/lib/
+sudo cp /install/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46-bin.jar /usr/local/hadoop/sqoop/lib/
 
 cd /usr/local/hadoop/hive/scripts/metastore/upgrade/mysql
 mysql -u root -phadoop <<EOF
