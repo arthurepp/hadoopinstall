@@ -28,7 +28,7 @@ echo 'export PATH=$PATH:$SPARK_HOME/bin' >> ~/.bashrc
 echo 'export YARN_CONF_DIR="/usr/local/hadoop/etc/hadoop"' >> ~/.bashrc
 
 sudo mkdir /install
-sudo wget -O /install/hadoop-2.8.3.tar.gz  "http://ftp.unicamp.br/pub/apache/hadoop/common/hadoop-2.8.3/hadoop-2.8.3.tar.gz"
+sudo wget -O /install/hadoop-2.9.0.tar.gz  "http://ftp.unicamp.br/pub/apache/hadoop/common/hadoop-2.9.0/hadoop-2.9.0.tar.gz"
 sudo wget -O /install/apache-hive-2.3.3-bin.tar.gz  "http://ftp.unicamp.br/pub/apache/hive/hive-2.3.3/apache-hive-2.3.3-bin.tar.gz"
 sudo wget -O /install/sqoop-1.4.7.tar.gz  "http://ftp.unicamp.br/pub/apache/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz"
 sudo wget -O /install/spark-2.3.0-bin-hadoop2.7.tgz  "http://ftp.unicamp.br/pub/apache/spark/spark-2.3.0/spark-2.3.0-bin-hadoop2.7.tgz"
@@ -46,15 +46,13 @@ sudo mkdir -p /usr/local/hadoop/spark
 
 sudo chown -R hadoop:hadoop /usr/local/hadoop
 
-sudo tar -xzvf /install/hadoop-2.8.2.tar.gz -C /usr/local/hadoop --strip-components=1
+sudo tar -xzvf /install/hadoop-2.9.0.tar.gz -C /usr/local/hadoop --strip-components=1
 sudo tar -xzvf /install/apache-hive-2.3.2-bin.tar.gz -C /usr/local/hadoop/hive --strip-components=1
 sudo tar -xzvf /install/sqoop-1.4.6.tar.gz -C /usr/local/hadoop/sqoop --strip-components=1
 sudo tar -xzvf /install/spark-2.2.0-bin-hadoop2.7.tgz -C /usr/local/hadoop/spark --strip-components=1
 sudo tar -xzvf /install/mysql-connector-java-5.1.44.tar.gz -C /install/
 
-sudo cp templates/hive-env.sh /usr/local/hadoop/hive/conf/hive-env.sh
 sudo cp templates/hive-site.xml /usr/local/hadoop/hive/conf/hive-site.xml
-sudo rm /usr/local/hadoop/hive/lib/log4j-slf4j-impl-2.6.2.jar
 sudo cp templates/core-site.xml /usr/local/hadoop/etc/hadoop/core-site.xml
 sudo cp templates/hdfs-site.xml /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 sudo cp templates/mapred-site.xml /usr/local/hadoop/etc/hadoop/mapred-site.xml
