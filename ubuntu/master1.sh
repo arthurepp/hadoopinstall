@@ -18,7 +18,7 @@ echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc;
 sudo sh -c -e "echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> /etc/environment";
 echo 'export HADOOP_HOME=/usr/local/hadoop' >> ~/.bashrc
 echo 'export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin' >> ~/.bashrc
-sudo sh -c -e "echo 'export HADOOP_PREFIX=/usr/local/hadoop' >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh";
+
 echo 'export HIVE_HOME="/usr/local/hadoop/hive"' >> ~/.bashrc
 echo 'export PATH=$PATH:$HIVE_HOME/bin' >> ~/.bashrc
 echo 'export SQOOP_HOME="/usr/local/hadoop/sqoop"' >> ~/.bashrc
@@ -64,6 +64,8 @@ sudo cp /usr/local/hadoop/hive/conf/hive-site.xml /usr/local/hadoop/spark/conf/
 
 sudo cp /install/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46-bin.jar /usr/local/hadoop/hive/lib/
 sudo cp /install/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46-bin.jar /usr/local/hadoop/sqoop/lib/
+
+sudo sh -c -e "echo 'export HADOOP_PREFIX=/usr/local/hadoop' >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh";
 
 cd /usr/local/hadoop/hive/scripts/metastore/upgrade/mysql
 mysql -u root -phadoop <<EOF
