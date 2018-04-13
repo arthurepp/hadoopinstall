@@ -1,10 +1,10 @@
-# hadoopc
+# hadoopInstall CentOS
 
 sudo yum install -y git
 
-git clone https://github.com/arthurepp/hadoopc.git
+git clone https://github.com/arthurepp/hadoopinstall.git
 
-cd hadoopc
+cd hadoopinstall/centos
 
 chmod +x slave1.sh
 
