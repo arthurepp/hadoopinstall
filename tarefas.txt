@@ -1,0 +1,7 @@
+- criar tutorial de como gerar a máquina virtual do centos 7
+- descobrir como alterar configurações de rede da máquina via código
+- criar script bash para pingar maquina e esperar ela ficar pronta
+- implementar sshpass para evitar ficar redigitando a senha todas as vezes que copia a chave para as maquinas
+- colocar todos os arquivos na raiz do repositorio git
+- encurtar url git
+- descobrir como fazer um script chamar outro script
