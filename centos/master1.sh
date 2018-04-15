@@ -38,6 +38,7 @@ sudo wget -O /install/apache-hive-2.3.3-bin.tar.gz  "http://ftp.unicamp.br/pub/a
 sudo wget -O /install/sqoop-1.4.7.tar.gz  "http://ftp.unicamp.br/pub/apache/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz"
 sudo wget -O /install/spark-2.3.0-bin-hadoop2.7.tgz  "http://ftp.unicamp.br/pub/apache/spark/spark-2.3.0/spark-2.3.0-bin-hadoop2.7.tgz"
 sudo wget -O /install/mysql-connector-java-5.1.46.tar.gz  "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.46.tar.gz"
+sudo wget -O /install/zeppelin-0.7.3-bin-all.tgz  "http://ftp.unicamp.br/pub/apache/zeppelin/zeppelin-0.7.3/zeppelin-0.7.3-bin-all.tgz"
 
 sudo mkdir -p /usr/local/hadoop
 sudo mkdir -p /usr/local/hadoop/logs
@@ -48,6 +49,7 @@ sudo mkdir -p /usr/local/hadoop/hive
 sudo mkdir -p /usr/local/hadoop/hive/iotmp
 sudo mkdir -p /usr/local/hadoop/sqoop
 sudo mkdir -p /usr/local/hadoop/spark
+sudo mkdir -p /usr/local/hadoop/zeppelin
 
 sudo chown -R hadoop:hadoop /usr/local/hadoop
 
@@ -56,6 +58,7 @@ sudo tar -xzvf /install/apache-hive-2.3.3-bin.tar.gz -C /usr/local/hadoop/hive -
 sudo tar -xzvf /install/sqoop-1.4.7.tar.gz -C /usr/local/hadoop/sqoop --strip-components=1
 sudo tar -xzvf /install/spark-2.3.0-bin-hadoop2.7.tgz -C /usr/local/hadoop/spark --strip-components=1
 sudo tar -xzvf /install/mysql-connector-java-5.1.46.tar.gz -C /install/
+sudo tar -xzvf /install/zeppelin-0.7.3-bin-all.tgz -C /usr/local/hadoop/zeppelin --strip-components=1
 
 sudo cp templates/hive-site.xml /usr/local/hadoop/hive/conf/hive-site.xml
 sudo cp templates/core-site.xml /usr/local/hadoop/etc/hadoop/core-site.xml
@@ -76,13 +79,12 @@ sudo sh -c -e "echo 'export HADOOP_PREFIX=/usr/local/hadoop' >> /usr/local/hadoo
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation
-cd /usr/local/hadoop/hive/scripts/metastore/upgrade/mysql
 mysql -u root -phadoop <<EOF
 create database hivemain;
 create user hive identified by 'hive';
 GRANT ALL PRIVILEGES ON hivemain.* TO 'hive'@'%' IDENTIFIED BY 'hive';
-use hivemain;
-source hive-schema-2.3.0.mysql.sql;
+GRANT ALL PRIVILEGES ON hivemain.* TO 'hive'@'localhost' IDENTIFIED BY 'hive';
+flush privileges;
 EOF
 
 sudo systemctl disable firewalld
