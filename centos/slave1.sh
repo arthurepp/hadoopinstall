@@ -4,8 +4,7 @@ sudo cp templates/hosts /etc/hosts
 
 sudo yum check-update
 sudo yum -y update
-sudo yum -y install java-1.8.0-openjdk-devel
-sudo yum -y install openssh
+sudo yum -y install java-1.8.0-openjdk-devel openssh sshpass
 
 #JAVA
 echo 'export JAVA_HOME="/usr/lib/jvm/java-openjdk/"' >> ~/.bashrc
