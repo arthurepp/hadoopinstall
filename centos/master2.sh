@@ -19,3 +19,5 @@ start-yarn.sh
 
 hadoop fs -mkdir -p /user/hive/warehouse
 hadoop fs -chmod g+w /user/hive/warehouse
+
+schematool -dbType mysql -initSchema -userName hive -passWord hive -verbose
