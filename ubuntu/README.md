@@ -2,14 +2,16 @@
 Configure os ips das máquinas como no exemplo abaixo antes de começar:
 
 hadoop-master -> 192.168.188.10 
+
 hadoop-slave1 -> 192.168.188.11 
+
 hadoop-slave2 -> 192.168.188.12 
 
 Execute o procedimento abaixo nas maquinas slaves e na master
 
 sudo apt-get -y install git
 
-git clone https://github.com/arthurepp/hadoopm.git
+git clone https://github.com/arthurepp/hadoopinstall.git
 
 cd hadoopm
 
