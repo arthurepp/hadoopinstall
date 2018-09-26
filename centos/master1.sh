@@ -38,7 +38,7 @@ sudo wget -O /install/apache-hive-3.1.0-bin.tar.gz  "http://ftp.unicamp.br/pub/a
 sudo wget -O /install/sqoop-1.4.7.tar.gz  "http://ftp.unicamp.br/pub/apache/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz"
 sudo wget -O /install/spark-2.3.2-bin-hadoop2.7.tgz  "http://ftp.unicamp.br/pub/apache/spark/spark-2.3.2/spark-2.3.2-bin-hadoop2.7.tgz"
 sudo wget -O /install/mysql-connector-java-5.1.47.tar.gz  "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz"
-sudo wget -O /install/zeppelin-0.8.8-bin-all.tgz  "http://ftp.unicamp.br/pub/apache/zeppelin/zeppelin-0.8.0/zeppelin-0.8.0-bin-all.tgz"
+sudo wget -O /install/zeppelin-0.8.0-bin-all.tgz  "http://ftp.unicamp.br/pub/apache/zeppelin/zeppelin-0.8.0/zeppelin-0.8.0-bin-all.tgz"
 
 sudo mkdir -p /usr/local/hadoop
 sudo mkdir -p /usr/local/hadoop/logs
