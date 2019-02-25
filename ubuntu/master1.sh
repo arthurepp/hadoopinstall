@@ -49,7 +49,7 @@ sudo mkdir -p /usr/local/hadoop/zeppelin
 sudo chown -R hadoop:hadoop /usr/local/hadoop
 
 sudo tar -xzvf /install/hadoop-3.1.2.tar.gz -C /usr/local/hadoop --strip-components=1
-sudo tar -xzvf /install/apache-hive-3.1.2-bin.tar.gz -C /usr/local/hadoop/hive --strip-components=1
+sudo tar -xzvf /install/apache-hive-3.1.1-bin.tar.gz -C /usr/local/hadoop/hive --strip-components=1
 sudo tar -xzvf /install/sqoop-1.4.7.tar.gz -C /usr/local/hadoop/sqoop --strip-components=1
 sudo tar -xzvf /install/spark-2.3.3-bin-hadoop2.7.tgz -C /usr/local/hadoop/spark --strip-components=1
 sudo tar -xzvf /install/mysql-connector-java-5.1.47.tar.gz -C /install/
