@@ -74,12 +74,12 @@ sudo sh -c -e "echo 'export HADOOP_PREFIX=/usr/local/hadoop' >> /usr/local/hadoo
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation
-mysql -u root -phadoop <<EOF
+mysql -u root <<EOF
 create database hivemain;
 create user hive identified by 'hive';
 GRANT ALL PRIVILEGES ON hivemain.* TO 'hive'@'%' IDENTIFIED BY 'hive';
 use hivemain;
-source hive-schema-2.3.0.mysql.sql;
+source hive-schema-3.1.0.mysql.sql;
 EOF
 
-sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf
