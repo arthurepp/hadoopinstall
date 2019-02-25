@@ -74,7 +74,7 @@ sudo sh -c -e "echo 'export HADOOP_PREFIX=/usr/local/hadoop' >> /usr/local/hadoo
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation
-mysql -u root <<EOF
+sudo mysql -u root <<EOF
 create database hivemain;
 create user hive identified by 'hive';
 GRANT ALL PRIVILEGES ON hivemain.* TO 'hive'@'%' IDENTIFIED BY 'hive';
