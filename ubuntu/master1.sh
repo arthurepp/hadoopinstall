@@ -79,7 +79,7 @@ create database hivemain;
 create user hive identified by 'hive';
 GRANT ALL PRIVILEGES ON hivemain.* TO 'hive'@'%' IDENTIFIED BY 'hive';
 use hivemain;
-source hive-schema-3.1.0.mysql.sql;
+source /usr/local/hadoop/hive/scripts/metastore/upgrade/mysql/hive-schema-3.1.0.mysql.sql;
 EOF
 
 sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf
